@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap');
+
+/* Base colors for Modern Clarity scheme */
+:root {
+  --bg-color: #121615;         /* Deep charcoal with green tint (almost black) */
+  --hero-bg-color: #1B3A34;    /* Slightly lighter dark green background for hero */
+  --text-color: #E0E0E0;       /* Near-white body text for contrast */
+  --heading-color: #FFFFFF;    /* White for main headings on dark */
+  --subheading-color: #B0BEB0; /* Muted sage green-gray for subheadings/taglines */
+  --ui-text-color: #A8B3AD;    /* Gray-green for nav, footer, small text */
+  --accent-color: #4CAF50;     /* Sage/soft green accent */
+}
+
+/* Global styles */
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Headings (Montserrat for display) */
+h1, h2, h3 {
+  font-family: 'Montserrat', sans-serif;
+  margin-top: 0;
+  margin-bottom: 0.5em;
+}
+h1 {
+  font-size: 1.875rem; /* ~30px */
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--heading-color);
+}
+h2 {
+  font-size: 1.5rem;  /* ~24px */
+  font-weight: 600;
+  line-height: 1.3;
+  color: #D0D8CC; /* light sage-gray for subsections :contentReference[oaicite:12]{index=12}*/
+}
+h3 {
+  font-size: 1.125rem; /* ~18px */
+  font-weight: 600;
+  line-height: 1.4;
+  color: #B0BEB0; /* muted sage gray (same as hero subheadline) :contentReference[oaicite:13]{index=13}*/
+}
+
+/* Links */
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+}
+a:hover, a:focus {
+  text-decoration: underline;
+}
+
+/* Header (nav bar) */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--hero-bg-color);
+  padding: 0.5em 1em;
+}
+header .logo {
+  max-height: 50px;
+}
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+nav li {
+  margin: 0 1em;
+}
+nav a {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: var(--ui-text-color);
+}
+nav a:hover {
+  color: var(--accent-color);
+}
+
+/* Hero section */
+#hero {
+  background-color: var(--hero-bg-color);
+  text-align: center;
+  padding: 4em 2em 3em;
+}
+#hero h1 {
+  font-size: 2.75rem; /* ~44px for hero headline */
+  font-weight: 800;
+  line-height: 1.1;
+  color: var(--heading-color);
+  margin-bottom: 0.3em;
+}
+#hero .hero-subtext {
+  font-family: 'Montserrat', sans-serif;  /* keep hero subheadline in Montserrat :contentReference[oaicite:14]{index=14} */
+  font-size: 1.125rem; /* ~18px */
+  font-weight: 500;
+  color: var(--subheading-color);
+  margin-bottom: 1.2em;
+}
+.cta-button {
+  display: inline-block;
+  background-color: var(--accent-color);
+  color: #000000;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 0.6em 1.2em;
+  border-radius: 4px;
+  /* Soft green button with black text (meets >7:1 contrast) :contentReference[oaicite:15]{index=15}*/
+}
+.cta-button:hover, .cta-button:focus {
+  background-color: #45A046; /* a slightly darker green on hover */
+  color: #000000;
+}
+
+/* Main content sections */
+section {
+  padding: 2em 1em;
+}
+#features, #benefits, #next-step {
+  font-family: 'Inter', sans-serif;
+}
+ul {
+  padding-left: 1.2em;
+}
+ul li {
+  margin: 0.3em 0;
+}
+
+/* Footer */
+footer {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 1.5em 1em; 
+}
+.footer-section h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.1rem;
+  color: var(--heading-color);
+  margin: 0 0 0.5em;
+}
+.footer-section p, .footer-section li {
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+.footer-section ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.footer-section ul li {
+  margin: 0.3em 0;
+}
+.footer-section a {
+  color: var(--text-color);
+  text-decoration: none;
+}
+.footer-section a:hover {
+  text-decoration: underline;
+}
+.footer-bottom {
+  background-color: var(--bg-color);
+  text-align: center;
+  padding: 0.75em 1em;
+}
+.footer-bottom p {
+  font-size: 0.85rem;
+  color: var(--ui-text-color);
+  margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+  }
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+  nav li {
+    margin: 0.5em 0;
+  }
+  #hero {
+    padding: 3em 1em 2.5em;
+  }
+  #hero h1 {
+    font-size: 2.2rem;
+  }
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  .footer-section {
+    margin-bottom: 1.5em;
+  }
+}
