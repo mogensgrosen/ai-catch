@@ -1,6 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap');
 
-/* Base colors for Sophisticated Minimalism scheme */
+/* Base colors for Sophisticated Minimalism scheme 
+The hexadecimal color #daa520 has RGB values of R:218, G:165, B:32 and CMYK values of C:0, M:0.24, Y:0.85, K:0.15.
+#1c1c1c color RGB value is (28,28,28). 
+*/
 :root {
   --bg-color: #121212;         /* Nearly black background */
   --hero-bg-color: #1c1c1c;    /* Slightly lighter charcoal for hero header */
@@ -272,6 +275,35 @@ added to improve visual hierarchy*/
   flex: 1;
   padding-left: 1rem;
 }
+
+/* inset the list 10% from each side */
+.catch-list-container {
+  padding: 0 10%;
+}
+
+/* reset list styles */
+.catch-list {
+  list-style: none;
+  margin: 1.5rem 0;
+  padding: 0;
+}
+
+/* hanging indent: allocate space for the first letter, then pull it back */
+.catch-list li {
+  padding-left: 2ch;       /* make room for the big letter */
+  text-indent: -2ch;       /* pull the first line back so the letter hangs */
+  margin-bottom: 0.75em;
+  line-height: 1.4;        /* comfortable line spacing */
+}
+
+/* style only that first letter */
+.catch-list li::first-letter {
+  font-weight: 700;        /* bold */
+  font-size: 1.5em;        /* slightly larger than body text */
+  color: #DAA520;          /* gold/yellow accent */
+}
+
+
 
 @media (max-width: 600px) {
   .founder-row {
