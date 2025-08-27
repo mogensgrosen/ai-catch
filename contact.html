@@ -12,19 +12,9 @@
 </head>
 <body>
   <div class="inner-content">
-    <header>
-      <a href="index.html"><img src="assets/logo04.png" alt="AI-CATCH Logo" class="logo"></a>
-      <nav class="main-nav" aria-label="Main Navigation">
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="ai-apps.html">AI Apps</a></li>
-          <li><a href="five-skills.html">Five Skills</a></li>
-          <li><a href="about-us.html">About Us</a></li>
-          <li><a href="blog.html">Blog</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
-    </header>
+
+    <!-- Shared header will be injected here -->
+    <div id="site-header" role="banner" aria-label="Site Header"></div>
 
     <main>
       <h1>Contact &amp; Get Started</h1>
@@ -53,41 +43,25 @@
         </ul>
       </section>
     </main>
+   <!-- Shared footer will be injected here -->
+    <div id="site-footer" role="contentinfo" aria-label="Site Footer"></div>
 
-    <footer>
-      <div class="footer-content">
-        <div class="footer-section">
-          <h3>About Us</h3>
-          <p>
-            AI-CATCH helps National Statistical Organizations (NSOs) navigate complex change through a 
-            Generative AI–powered, collaborative framework.<br>
-            Visit <a href="about-us.html"><b>ABOUT US </b></a> for more details.
-          </p>
-        </div>
-        <div class="footer-section">
-          <h3>Quick Links</h3>
-         <ul>
-            <li></li>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="ai-apps.html">AI Apps</a></li>
-            <li><a href="five-skills.html">Five Skills</a></li>
-            <li><a href="about-us.html">About Us</a></li>
-            <li><a href="blog.html">Blog</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-             <p><a href="assets/AI-CATCH_The_Essentials.pdf">Download free E-Book: AI-CATCH: The Essentials</a></br>
-
-        </div>
-        <div class="footer-section">
-          <h3>Contact Us</h3>
-          <p>Email: contact@ai-catch.com<br>
-          Visit our <a href="contact.html"><b>CONTACT PAGE</b></a> for more details.</p>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; 2025 AI-CATCH. All rights reserved.</p>
-      </div>
-    </footer>
   </div>
+      <!-- Simple client-side includes -->
+  <script>
+    async function loadInclude(id, url) {
+      try {
+        const res = await fetch(url, { cache: 'no-cache' });
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        const html = await res.text();
+        document.getElementById(id).innerHTML = html;
+      } catch (e) {
+        console.error('Include failed for', url, e);
+      }
+    }
+    loadInclude('site-header', 'header.html');
+    loadInclude('site-footer', 'footer.html');
+  </script>
+
 </body>
 </html>
